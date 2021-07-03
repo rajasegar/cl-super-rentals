@@ -6,7 +6,7 @@
     
     <div class="right tomster"></div>
     
-    <h2>Grand Old Mansion</h2>
+    <h2>{{rental.title}}</h2>
     
     <p>Nice find! This looks like a nice place to stay near San Francisco.</p>
     
@@ -15,7 +15,7 @@
     
     <button class="image" type="button" _="on click toggle .large then if #view-caption.textContent === 'View Larger' then set #view-caption.textContent to 'View Smaller' else set #view-caption.textContent to 'View Larger'">
       
-      <img src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Crane_estate_(5).jpg" alt="An image of Grand Old Mansion">
+      <img src="{{rental.image}}" alt="An image of Grand Old Mansion">
       
       <small id="view-caption">View Larger</small>
       
@@ -23,25 +23,25 @@
     
     <div class="details">
       
-      <h3>Grand Old Mansion</h3>
+      <h3>{{rental.title}}</h3>
       
-      <div class="detail owner"><span>Owner:</span>Veruca Salt</div>
+      <div class="detail owner"><span>Owner: </span>{{rental.owner}}</div>
       
-      <div class="detail type"><span>Type:</span>Estate</div>
+      <div class="detail type"><span>Type: </span>{{rental.category}}</div>
       
-      <div class="detail location"><span>Location:</span>San Francisco</div>
+      <div class="detail location"><span>Location: </span>{{rental.city}}</div>
       
-      <div class="detail bedrooms"><span>Bedrooms:</span>15</div>
+      <div class="detail bedrooms"><span>Bedrooms: </span>{{rental.bedrooms}}</div>
       
       <div class="detail description">
 	
-	<p>This grand old mansion sits on over 100 acres of rolling hills and dense redwood forests.</p>
+	<p>{{rental.description}}</p>
 	
       </div>
       
     </div>
     
-    <div class="map"><img class="large" alt="A map of Grand Old Mansion" src="https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/-122.4194,37.7749,12/894x600@2x?access_token=pk.eyJ1IjoicmFqYXNlZ2FyYyIsImEiOiJja2w2MzV0M2MyZHJnMzBtczA3ODJsOWZ2In0.pwUodXBD7MxNMF38fs0UsQ" width="894" height="600"></div>
+    <div class="map"><img class="large" alt="A map of Grand Old Mansion" src="https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/{{rental.lng}},{{rental.lat}},12/894x600@2x?access_token=pk.eyJ1IjoicmFqYXNlZ2FyYyIsImEiOiJja2w2MzV0M2MyZHJnMzBtczA3ODJsOWZ2In0.pwUodXBD7MxNMF38fs0UsQ" width="894" height="600"></div>
     
   </article>
 </div>
