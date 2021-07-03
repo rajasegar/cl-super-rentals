@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>{% block title %}{% endblock %}</title>
+  <link rel="stylesheet" type="text/css" media="screen" href="/css/main.css">
+</head>
+<body>
+  <div class="container">
+    <nav class="menu"><a href="/"> <h1>Super Rentals</h1></a><div class="links"><a href="/about">About</a><a href="/contact">Contact</a></div></nav>
+    <div class="body">
+  {% block content %}{% endblock %}
+  </div>
+  </div>
+</body>
+</html>
