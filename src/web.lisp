@@ -31,6 +31,9 @@
 
 (defroute "/contact" ()
   (render #P"contact.html"))
+
+(defroute "/rentals/:id" ()
+  (render #P"rentals.html"))
 ;;
 ;; Error pages
 

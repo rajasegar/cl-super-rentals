@@ -1,0 +1,48 @@
+{% extends "layouts/default.html" %}
+{% block title %}Rentals - Super Rentals{% endblock %}
+{% block content %}
+<div id="main">
+  <div class="jumbo">
+    
+    <div class="right tomster"></div>
+    
+    <h2>Grand Old Mansion</h2>
+    
+    <p>Nice find! This looks like a nice place to stay near San Francisco.</p>
+    
+    <a class="button share" href="#">Share on Twitter</a></div>
+  <article class="rental detailed">
+    
+    <button class="image" type="button" _="on click toggle .large then if #view-caption.textContent === 'View Larger' then set #view-caption.textContent to 'View Smaller' else set #view-caption.textContent to 'View Larger'">
+      
+      <img src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Crane_estate_(5).jpg" alt="An image of Grand Old Mansion">
+      
+      <small id="view-caption">View Larger</small>
+      
+    </button>
+    
+    <div class="details">
+      
+      <h3>Grand Old Mansion</h3>
+      
+      <div class="detail owner"><span>Owner:</span>Veruca Salt</div>
+      
+      <div class="detail type"><span>Type:</span>Estate</div>
+      
+      <div class="detail location"><span>Location:</span>San Francisco</div>
+      
+      <div class="detail bedrooms"><span>Bedrooms:</span>15</div>
+      
+      <div class="detail description">
+	
+	<p>This grand old mansion sits on over 100 acres of rolling hills and dense redwood forests.</p>
+	
+      </div>
+      
+    </div>
+    
+    <div class="map"><img class="large" alt="A map of Grand Old Mansion" src="https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/-122.4194,37.7749,12/894x600@2x?access_token=pk.eyJ1IjoicmFqYXNlZ2FyYyIsImEiOiJja2w2MzV0M2MyZHJnMzBtczA3ODJsOWZ2In0.pwUodXBD7MxNMF38fs0UsQ" width="894" height="600"></div>
+    
+  </article>
+</div>
+{% endblock %}
