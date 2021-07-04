@@ -1,1 +1,30 @@
-<h1>Search Results</h1>
+{% for rental in rentals %} 
+<li>
+  <article class="rental">
+    <button class="image" type="button" _="on click toggle .large then if #view-caption.textContent === 'View Larger' then set #view-caption.textContent to 'View Smaller' else set #view-caption.textContent to 'View Larger'">
+      <img src="{{rental.image}}" alt="An image of {{rental.title}}">
+      <small id="view-caption">View Larger</small>
+    </button>
+    <div class="details">
+      <h3><a href="/rentals/{{rental.id}}">{{rental.title}}</a></h3>
+      <div class="detail owner"><span>Owner: </span>{{rental.owner}}</div>
+      
+      <div class="detail type"><span>Type: </span>{{rental.category}}</div>
+      
+      <div class="detail location"><span>Location: </span>{{rental.city}}</div>
+      
+      <div class="detail bedrooms"><span>Bedrooms: </span>{{rental.bedrooms}}</div>
+      
+    </div>
+    
+    <div class="map">
+      
+      <img alt="A map of {{rental.title}}" src="https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/{{rental.lng}},{{rental.lat}},9/150x150@2x?access_token=pk.eyJ1IjoicmFqYXNlZ2FyYyIsImEiOiJja2w2MzV0M2MyZHJnMzBtczA3ODJsOWZ2In0.pwUodXBD7MxNMF38fs0UsQ" width="150" height="150">
+      
+    </div>
+    
+  </article>
+  
+</li>
+{% endfor %}
+

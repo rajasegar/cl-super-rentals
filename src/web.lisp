@@ -55,9 +55,6 @@
 ;; Routing rules
 
 (defroute "/" ()
-  (format t "~a~%" *rentals*)
-  (loop for r in *rentals*
-	do(format t "~a~%" (cdr r)))
   (render #P"index.html" (list :rentals (mapcar #'(lambda (r) (cdr r)) *rentals*))))
 
 (defroute "/about" ()
@@ -68,13 +65,27 @@
 
 (defroute "/rentals/:id" (&key id)
   (format t "~a~%" id)
-  (format t "~a~%" (cdr (assoc id *rentals* :test #'string=)))
+  ;; (format t "~a~%" (cdr (assoc id *rentals* :test #'string=)))
   (render #P"rentals.html" (list
 			    :rental (cdr (assoc id *rentals* :test #'string=))))
 			     )
 
-(defroute "/search" ()
-  (render #P"search.html"))
+(defun filter-rentals (query)
+  "Filter the rentals not matching query string"
+  (remove-if #'(lambda (r)
+	      (let ((title (cdr (assoc "title" (cdr r) :test #'string=))))
+		(if (search query title :test #'char-equal)
+		    nil
+		    t
+		    ))) *rentals* ))
+
+(defroute ("/search" :method :POST) (&key _parsed)
+  (format t "~a~%" (cdr (assoc "search" _parsed :test #'string=)))
+  (let ((query (cdr (assoc "search" _parsed :test #'string=))))
+    (render #P"search.html"
+	    (list :rentals
+		  (mapcar #'(lambda (r)
+			      (cdr r)) (filter-rentals query))))))
 ;;
 ;; Error pages
 

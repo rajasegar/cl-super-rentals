@@ -12,6 +12,7 @@
       <span>Where would you like to stay?</span>
       <input class="light" type="text" name="search" hx-post="/search" hx-trigger="keyup changed delay:500ms" hx-target=".results" hx-indicator=".htmx-indicator">
     </label>
+    <div class="htmx-indicator"> Searching rentals...</div>
     <ul class="results">
      {% for rental in rentals %} 
       <li>

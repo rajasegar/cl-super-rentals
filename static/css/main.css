@@ -467,3 +467,9 @@ p {
   height: 1px; width: 1px;
   margin: -1px; padding: 0; border: 0;
 }
+
+.htmx-indicator {
+    text-align: center;
+    font-weight: bold;
+    color: #016aba;
+}
