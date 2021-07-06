@@ -1,7 +1,7 @@
 # super-rentals
 
-[Demo](https://cl-super-rentals.herokuapp.com)
-[Blogpost](https://dev.to/rajasegar/building-a-rentals-listing-web-application-in-common-lisp-4nn3)
+- [Demo](https://cl-super-rentals.herokuapp.com)
+- [Blogpost](https://dev.to/rajasegar/building-a-rentals-listing-web-application-in-common-lisp-4nn3)
 
 
 ## Usage
