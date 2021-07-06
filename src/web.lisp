@@ -82,7 +82,7 @@
 (defroute ("/search" :method :POST) (&key _parsed)
   (format t "~a~%" (cdr (assoc "search" _parsed :test #'string=)))
   (let ((query (cdr (assoc "search" _parsed :test #'string=))))
-    (render #P"search.html"
+    (render #P"_search.html"
 	    (list :rentals
 		  (mapcar #'(lambda (r)
 			      (cdr r)) (filter-rentals query))))))
